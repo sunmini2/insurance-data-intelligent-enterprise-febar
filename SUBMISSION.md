@@ -97,7 +97,7 @@ Lakeflow pipeline:  bronze ──► silver ──► gold_policyholder_360     
 
 ## Links & IDs
 - **GitHub repo (public):** https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar
-- **Presentation deck:** [`docs/DECK.md`](https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar/blob/main/docs/DECK.md) (export to PDF/.md and attach in the deck field of the submission form)
+- **Presentation deck (Google Slides):** https://docs.google.com/presentation/d/199uZzfU7kpWvJce3Zb7VafsIUBWQtJz8JAfSfTz8tyM/edit (download as PDF and attach in the deck field of the submission form; markdown source also in [`docs/DECK.md`](https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar/blob/main/docs/DECK.md))
 - **Conversation ID (Claude Code):** `b412fef3-da28-4e38-bead-1cac4b0efcea`
   *(find yours: run `/status` in the session, or take the newest transcript filename in
   `~/.claude/projects/<project>/` — the file is `<conversation-id>.jsonl`.)*

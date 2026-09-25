@@ -9,7 +9,17 @@
 **Industry:** Insurance (P&C + Life). **Problem:** non-renewal churn leaking premium.
 **Solution:** one governed data journey from raw source files to a business app.
 
-📄 **Submission write-up:** [`SUBMISSION.md`](SUBMISSION.md) · 🖥️ **Deck:** [`docs/DECK.md`](docs/DECK.md) · ✅ **Execution evidence (text):** [`evidence/`](evidence/)
+📄 **Submission write-up:** [`SUBMISSION.md`](SUBMISSION.md) · ✅ **Execution evidence (text):** [`evidence/`](evidence/)
+
+### Submission links & IDs
+| | |
+|---|---|
+| **Presentation deck (Google Slides)** | https://docs.google.com/presentation/d/199uZzfU7kpWvJce3Zb7VafsIUBWQtJz8JAfSfTz8tyM/edit |
+| Deck (markdown, in repo) | [`docs/DECK.md`](docs/DECK.md) |
+| Public repo (for the validator) | https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar |
+| **Conversation ID (Claude Code)** | `b412fef3-da28-4e38-bead-1cac4b0efcea` |
+
+*(Find your conversation ID: run `/status` in the session, or take the newest transcript filename in `~/.claude/projects/<project>/` — the file is `<conversation-id>.jsonl`.)*
 
 ---
 
