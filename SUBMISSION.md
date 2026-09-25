@@ -96,8 +96,8 @@ Lakeflow pipeline:  bronze ──► silver ──► gold_policyholder_360     
   regulated carrier.
 
 ## Links & IDs
-- **GitHub repo:** https://github.com/<REPLACE_WITH_PUBLIC_REPO_URL>
-- **Presentation deck:** `docs/DECK.md` (export to PDF for the submission form) — <REPLACE_IF_HOSTED>
+- **GitHub repo (public):** https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar
+- **Presentation deck:** [`docs/DECK.md`](https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar/blob/main/docs/DECK.md) (export to PDF/.md and attach in the deck field of the submission form)
 - **Conversation ID (Claude Code):** `b412fef3-da28-4e38-bead-1cac4b0efcea`
   *(find yours: run `/status` in the session, or take the newest transcript filename in
   `~/.claude/projects/<project>/` — the file is `<conversation-id>.jsonl`.)*
