@@ -1,0 +1,6 @@
+command: ["python", "launch.py"]
+env:
+  - name: WAREHOUSE_ID
+    value: "148ccb90800933a1"
+  - name: LAKEBASE_INSTANCE
+    value: "insurance-febar-lakebase"
