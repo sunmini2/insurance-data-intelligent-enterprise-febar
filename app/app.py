@@ -32,24 +32,33 @@ def _conn():
 
 
 # ---- Lakebase (Postgres) connection for the operational agent workbench ----
-def _pg_connect():
-    """Connect to Lakebase Postgres. Prefers platform-injected PG* env vars
-    (Databricks App database resource); otherwise mints a short-lived OAuth
-    token via the Databricks SDK and connects as the app's identity."""
-    import psycopg2
-    host = os.getenv("PGHOST"); user = os.getenv("PGUSER"); pw = os.getenv("PGPASSWORD")
-    port = os.getenv("PGPORT", "5432"); db = os.getenv("PGDATABASE", LAKEBASE_DB)
-    if not (host and user and pw):
+def _pg_password():
+    """A valid Databricks OAuth token is accepted as the Lakebase Postgres
+    password. Try, in order: an injected PGPASSWORD; the database-scoped
+    credential API (newer SDKs); a plain workspace OAuth token via Config."""
+    pw = os.getenv("PGPASSWORD")
+    if pw:
+        return pw
+    try:  # newer databricks-sdk exposes the Database API
         from databricks.sdk import WorkspaceClient
-        w = WorkspaceClient()
-        inst = w.database.get_database_instance(name=LAKEBASE_INSTANCE)
-        host = inst.read_write_dns
-        cred = w.database.generate_database_credential(
+        cred = WorkspaceClient().database.generate_database_credential(
             request_id=str(uuid.uuid4()), instance_names=[LAKEBASE_INSTANCE])
-        pw = cred.token
-        user = user or w.current_user.me().user_name
+        return cred.token
+    except Exception:
+        pass
+    return cfg.oauth_token().access_token  # SP's OAuth token (works on any SDK)
+
+def _pg_connect():
+    """Connect to Lakebase Postgres as the app's service principal. Host/user
+    come from the platform-injected env vars when the database resource is
+    attached, with safe defaults for this instance."""
+    import psycopg2
+    host = os.getenv("PGHOST") or os.getenv("LAKEBASE_HOST")
+    user = os.getenv("PGUSER") or os.getenv("DATABRICKS_CLIENT_ID") or getattr(cfg, "client_id", None)
+    port = os.getenv("PGPORT", "5432")
+    db = os.getenv("PGDATABASE", LAKEBASE_DB)
     return psycopg2.connect(host=host, port=port, dbname=db, user=user,
-                            password=pw, sslmode="require")
+                            password=_pg_password(), sslmode="require")
 
 def pg_query(query: str, params=None) -> pd.DataFrame:
     conn = _pg_connect()

@@ -4,3 +4,5 @@ env:
     value: "148ccb90800933a1"
   - name: LAKEBASE_INSTANCE
     value: "insurance-febar-lakebase"
+  - name: LAKEBASE_HOST
+    value: "ep-orange-base-e1jzzgfv.database.eastus2.azuredatabricks.net"
