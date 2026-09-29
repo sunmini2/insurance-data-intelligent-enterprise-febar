@@ -17,7 +17,7 @@ persona asks.
 
 - [ ] App is **warm** — open it once so the compute is running and the first query is cached.
 - [ ] Land on the **KPI header** (top of the app), not a sub-tab.
-- [ ] Have the **Genie space** open in a second tab — you'll demo it live (and it doubles as free-form Q&A backup). Pre-run one question so it's warm.
+- [ ] Have the **Genie Agent** open in a second tab — you'll demo it live (and it doubles as free-form Q&A backup). Pre-run one question so it's warm.
 - [ ] Have the **AI/BI dashboard** open in a third tab as a hard backup.
 - [ ] Zoom the browser to ~110% so the KPI cards read from across the room.
 - [ ] Close Slack/email; single monitor mirrored.

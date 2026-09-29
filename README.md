@@ -33,7 +33,7 @@
 | 2 | **Unity Catalog** | PII column mask + lineage | `sql/08_governance_pii_mask.sql` | [`evidence/02`](evidence/02_unity_catalog_governance.md) |
 | 3 | **ML / GenAI** | MLflow + UC model; `ai_query` | `ml/train_churn.py`, `sql/06`–`07` | [`evidence/03`](evidence/03_ml_churn_model.md) |
 | 4 | **Lakebase** | Managed Postgres + synced table (OLTP) | `lakebase/setup.md` | [`evidence/04`](evidence/04_lakebase_serving.md) |
-| 5 | **Genie Agent** | Genie Space (NL Q&A) | `platform/create_genie_space.py` | [`evidence/05`](evidence/05_genie.md) |
+| 5 | **Genie Agent** | Genie Agent (NL Q&A) | `platform/create_genie_space.py` | [`evidence/05`](evidence/05_genie.md) |
 | 6 | **Databricks App** | Streamlit business surface | `app/` | [`evidence/06`](evidence/06_databricks_app.md) |
 
 ```
@@ -67,7 +67,7 @@ raw files in a UC Volume ─Auto Loader─► bronze ─► silver ─► gold_p
 | Lakeflow pipeline | `insurance-medallion-febar` (`9ad8ce90-7917-40cb-9782-cceccb781b52`) |
 | Registered model | `sunmin_catalog.insurance_demo.policyholder_churn` (AUC 0.766) |
 | Lakebase instance | `insurance-febar-lakebase` · UC catalog `insurance_lakebase` |
-| Genie space | `01f1b8fe3ad1188f9de6c5612ca0ee23` |
+| Genie Agent | [`Insurance Retention & Risk — Executive Genie`](https://adb-984752964297111.11.azuredatabricks.net/genie/rooms/01f1b8fe3ad1188f9de6c5612ca0ee23?o=984752964297111) (`01f1b8fe3ad1188f9de6c5612ca0ee23`) |
 | Databricks App | https://insurance-retention-febar-984752964297111.11.azure.databricksapps.com |
 
 ## Repo layout
@@ -80,7 +80,7 @@ sql/        # governance + GenAI + downstream views/story tables (run order 05�
 ml/         # churn training notebook (MLflow + UC registry + batch scoring)
 lakebase/   # Lakebase provisioning + synced table + dispositions DDL
 app/        # Databricks App (Streamlit): 6 tabs incl. the Lakebase agent workbench
-platform/   # helpers: SQL runner, dashboard builder, Genie space, slide builder
+platform/   # helpers: SQL runner, dashboard builder, Genie Agent, slide builder
 docs/       # DECK.md (business deck), talk track, glossary, Q&A pack
 evidence/   # committed TEXT evidence that each stage actually ran
 SUBMISSION.md  # the FE Bar submission write-up (customer, challenge, solution, outcomes, links)
@@ -90,7 +90,7 @@ SUBMISSION.md  # the FE Bar submission write-up (customer, challenge, solution, 
 
 See [`evidence/00_journey.md`](evidence/00_journey.md) for the full step-by-step. In short:
 generate raw files → run the Lakeflow pipeline → apply the mask → train the model → build the
-GenAI briefs → provision Lakebase + synced table → create the Genie space → deploy the app.
+GenAI briefs → provision Lakebase + synced table → create the Genie Agent → deploy the app.
 
 Built with **Claude Code** driving the Databricks CLI/APIs. Conversation ID:
 `b412fef3-da28-4e38-bead-1cac4b0efcea`.

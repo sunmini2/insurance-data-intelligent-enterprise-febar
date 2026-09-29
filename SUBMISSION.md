@@ -36,7 +36,7 @@ an operational business app — no silos, no hand-offs.
 | 2 | **Unity Catalog** | Column mask, lineage, one governed schema | Governs every object; **PII column mask** on `email` (deny-by-default, only `claims_pii_readers` see raw); automatic end-to-end lineage from raw Volume → gold. |
 | 3 | **ML / GenAI** | MLflow + UC model registry; `ai_query` | GradientBoosting **non-renewal model (AUC 0.766)** → `gold_churn_scores` (666 High-risk, $5.1M at risk). **Retention Copilot** uses `ai_query` to turn claims + call notes into a *why-at-risk / next-best-action / draft-outreach* brief per high-risk policyholder. |
 | 4 | **Lakebase** | Managed Postgres + synced table | The high-risk worklist is synced Delta→Postgres for **low-latency operational serving**; agents claim cases and log outreach dispositions as **OLTP writes** — a real two-way loop. |
-| 5 | **Genie Agent** | Genie Space | Executives ask the book questions in **plain English** ("how much premium is at risk?") and get governed answers + SQL, grounded on the same gold tables. |
+| 5 | **Genie Agent** | Genie Agent | Executives ask the book questions in **plain English** ("how much premium is at risk?") and get governed answers + SQL, grounded on the same gold tables. |
 | 6 | **Databricks App** | Streamlit app | One business surface: the trend, where risk sits, why they leave, proven ROI, the GenAI Copilot, and the **Lakebase-backed Agent Workbench**. |
 
 **Architecture (data flow):**
@@ -48,7 +48,7 @@ Lakeflow pipeline:  bronze ──► silver ──► gold_policyholder_360     
                                               │
                  ┌────────────────────────────┼───────────────────────────────┐
                  ▼                            ▼                                ▼
-        ML churn model (MLflow/UC)    GenAI Retention Copilot          Genie Space (NL Q&A)
+        ML churn model (MLflow/UC)    GenAI Retention Copilot          Genie Agent (NL Q&A)
         → gold_churn_scores           (ai_query briefs)                       │
                  │                            │                               │
                  └───────────► gold_agent_worklist ──(synced table)──► Lakebase Postgres
@@ -107,7 +107,7 @@ Lakeflow pipeline:  bronze ──► silver ──► gold_policyholder_360     
 - Lakeflow pipeline: `insurance-medallion-febar` (`9ad8ce90-7917-40cb-9782-cceccb781b52`)
 - Model: `sunmin_catalog.insurance_demo.policyholder_churn`
 - Lakebase: `insurance-febar-lakebase` (UC catalog `insurance_lakebase`)
-- Genie space: `01f1b8fe3ad1188f9de6c5612ca0ee23`
+- Genie Agent: [`01f1b8fe3ad1188f9de6c5612ca0ee23`](https://adb-984752964297111.11.azuredatabricks.net/genie/rooms/01f1b8fe3ad1188f9de6c5612ca0ee23?o=984752964297111)
 - App: https://insurance-retention-febar-984752964297111.11.azure.databricksapps.com
 
 _Execution evidence (readable as text) is committed under `evidence/`. Synthetic data only — no real customer data._

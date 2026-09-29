@@ -1,6 +1,6 @@
 # Evidence — Stage 5: Genie Agent (natural-language Q&A)
 
-**Space:** `Insurance Retention & Risk — Executive Genie` · id `01f1b8fe3ad1188f9de6c5612ca0ee23`
+**Genie Agent:** [`Insurance Retention & Risk — Executive Genie`](https://adb-984752964297111.11.azuredatabricks.net/genie/rooms/01f1b8fe3ad1188f9de6c5612ca0ee23?o=984752964297111) · id `01f1b8fe3ad1188f9de6c5612ca0ee23`
 **Warehouse:** `148ccb90800933a1` · **Tables:** `gold_book_scored`, `gold_policyholder_360`, `gold_retention_copilot`
 
 Real conversations via the Genie Conversation API — each shows the natural-language question,
