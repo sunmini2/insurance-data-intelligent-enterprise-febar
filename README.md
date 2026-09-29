@@ -14,7 +14,7 @@
 ### Submission links & IDs
 | | |
 |---|---|
-| **Presentation deck (Google Slides)** | https://docs.google.com/presentation/d/199uZzfU7kpWvJce3Zb7VafsIUBWQtJz8JAfSfTz8tyM/edit |
+| **Presentation deck (Google Slides)** | https://docs.google.com/presentation/d/1soNwSvabm-7Q3qYvRRdQH2jt7pLvLVMoJG04PtoZLB4/edit |
 | Deck (markdown, in repo) | [`docs/DECK.md`](docs/DECK.md) |
 | Public repo (for the validator) | https://github.com/sunmini2/insurance-data-intelligent-enterprise-febar |
 | **Conversation ID (Claude Code)** | `b412fef3-da28-4e38-bead-1cac4b0efcea` |
