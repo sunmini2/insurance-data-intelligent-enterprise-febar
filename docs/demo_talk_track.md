@@ -44,6 +44,8 @@ persona asks.
 
 Ask 3–4 of these, listen, and **write their answers on the whiteboard/chat** — you'll call back to them during the demo.
 
+> Alright, let's start with couple of questions. 
+
 - "What's your current **retention / persistency** rate, and how do you forecast it today?"
 - "When a book starts to lapse, **how many weeks** until it shows up in a report — and who acts on it?"
 - "How much **analyst time** goes into reconciling policy vs. claims vs. CRM before anyone trusts a number?"
