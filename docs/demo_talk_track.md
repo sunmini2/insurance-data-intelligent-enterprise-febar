@@ -1,8 +1,8 @@
 # Demo Talk Track — Driving the App (Northwind Mutual)
 
 A presenter script for the SA "Data Intelligent Enterprise" interview, driven from the
-**Databricks App**: `insurance-retention` →
-https://insurance-retention-984752964297111.11.azure.databricksapps.com
+**Databricks App**: `insurance-retention-febar` →
+https://insurance-retention-febar-984752964297111.11.azure.databricksapps.com
 
 **Format:** ~10 min open/discovery · ~25 min demo · ~15 min debrief. Scoring is **75% customer
 skills / 25% build** — the app is a *prop* for the conversation. Lead with the outcome (the app),
@@ -71,8 +71,8 @@ connected — and that retention is a board-level number. Fair?"*
 
 > "This is what your Chief Retention Officer would see Monday morning. One governed view of the
 > whole book: **$11.6 million** in annual premium across **5,200** policyholders. The model has
-> flagged **654** of them as high-risk — that's **$4.8 million** of premium at risk we can now
-> see *before* the non-renewal notice goes out. Book-wide non-renewal is sitting at **26%**."
+> flagged **666** of them as high-risk — that's **$5.1 million** of premium at risk we can now
+> see *before* the non-renewal notice goes out. Book-wide non-renewal is sitting at **27%**."
 
 [Point to the last card.]
 
@@ -95,7 +95,7 @@ connected — and that retention is a board-level number. Fair?"*
 > CFO doesn't file a ticket and wait a week — they just ask. That's the 'one source of truth' made
 > self-serve."
 
-[Backup question if asked to prove it again: *"How much premium is at risk in the High and Medium tiers?"* → ~$4.8M. Then swap back to the app.]
+[Backup question if asked to prove it again: *"How much premium is at risk in the High and Medium tiers?"* → ~$5.1M. Then swap back to the app.]
 
 **Persona aim:** business leaders + CDO — this is the "decisions in seconds, not weeks" promise, live.
 
@@ -133,7 +133,7 @@ connected — and that retention is a board-level number. Fair?"*
 [Click **Why They Leave**.]
 
 > "This is where it gets useful. The high-risk cohort doesn't look like everyone else. They got
-> bigger renewal increases — **13% on average** versus **4%** for low-risk. They've called in with
+> bigger renewal increases — **~12% on average** versus **~4%** for low-risk. They've called in with
 > more complaints. They're shopping competitors more. And they've had more denied claims. Every one
 > of these is *addressable* — a rate conversation, a service recovery, a proactive call."
 
@@ -169,21 +169,24 @@ Pause and ask:
 
 [Click a policyholder; read the brief aloud.]
 
-> "Look at this: the model says 99% likely to leave, **$1,900** of premium on the line. And the
-> GenAI brief tells the agent *why* — a 27% premium hike plus complaints plus a competitor-shopping
+> "Look at this: the model says 99% likely to leave, **~$2,800** of premium on the line. And the
+> GenAI brief tells the agent *why* — a 25% premium hike plus complaints plus a competitor-shopping
 > call — the *next best action*, and it's even drafted the outreach. Your agent opens one screen,
 > not seven, and makes a warm, informed call in thirty seconds."
 
-> **This is the four layers compounding:** the governed data feeds the model, the model targets the
-> GenAI, and the app puts it in an agent's hands. *That's* the data-intelligent enterprise.
+> **This is the whole journey compounding:** Lakeflow and Unity Catalog deliver governed data, the
+> model targets the GenAI, Lakebase serves the worklist, and the app puts it in an agent's hands.
+> *That's* the data-intelligent enterprise.
 
 ### (Only if a technical persona pushes) — the engine room
 
-> "Happy to pop the hood. Underneath, three sources — your policy admin, claims, and CRM — land in
-> Unity Catalog and are unified into one Policyholder 360, with full column-level lineage and PII
-> masked by policy. The churn model is MLflow-tracked and registered in Unity Catalog, versioned
-> and monitorable like any other asset. Nothing here is a shadow stack — it's all governed the
-> same way."
+> "Happy to pop the hood. Underneath, three sources — your policy admin, claims, and CRM — are
+> ingested by a **Lakeflow** declarative pipeline into **Unity Catalog** and unified into one
+> Policyholder 360, with full column-level lineage and PII masked by policy. The churn model is
+> MLflow-tracked and registered in Unity Catalog, versioned and monitorable like any other asset.
+> And the high-risk worklist syncs to **Lakebase** (Postgres), so when an agent claims a case and
+> logs an outcome, that writes back operationally. Nothing here is a shadow stack — it's all
+> governed the same way."
 
 **If anything is slow or breaks:** *"The refresh runs on a schedule — let me walk you through the
 logic while it catches up."* Keep talking to the business value; never go silent.
@@ -249,13 +252,13 @@ Restate the original problem, then map the demo to it. Anticipate (answers in `i
 ## 5. Debrief (roles drop) — talking points
 
 - **Approach:** outcome-first; anchored on retention/persistency; validated assumptions in discovery.
-- **Tools:** Databricks (UC, MLflow, AI Functions, Genie, AI/BI, Apps) built with an AI coding agent
-  as a force-multiplier; most effort went to *narrative and data realism*, not plumbing.
+- **Tools:** Databricks (Lakeflow, UC, MLflow, AI Functions, Lakebase, Genie, AI/BI, Apps) built
+  with an AI coding agent as a force-multiplier; most effort went to *narrative and data realism*, not plumbing.
 - **Build vs. story:** deliberately ~1/3 build, ~2/3 story and objection prep.
-- **Do differently:** wire one live source via Lakeflow Connect; add an A/B holdout to *measure*
-  recovered premium; add a second model (fraud) to show the platform compounding.
-- **Trade-off:** prioritized model usefulness + GenAI activation over pipeline automation because
-  the leader's pain was retention; a first-pass 0.72-AUC model is honest and has a clear improvement path.
+- **Do differently:** swap the synthetic file drop for a *live* source via Lakeflow Connect; add a
+  second model (fraud / loss-ratio) to show the platform compounding; add CI/CD + drift monitoring.
+- **Trade-off:** prioritized model usefulness + GenAI activation + the operational Lakebase loop
+  because the leader's pain was retention; a first-pass 0.77-AUC model is honest and has a clear improvement path.
 
 ---
 
@@ -264,12 +267,12 @@ Restate the original problem, then map the demo to it. Anticipate (answers in `i
 | | |
 |---|---|
 | Book premium | **$11.6M** · 5,200 policyholders |
-| Premium at risk (H+M) | **$4.8M** ($1.63M High / $3.18M Med) |
-| High-risk policyholders | **654** |
-| Book non-renewal rate | **~26%** |
+| Premium at risk (H+M) | **$5.1M** ($1.64M High / $3.46M Med) |
+| High-risk policyholders | **666** |
+| Book non-renewal rate | **~27%** |
 | Campaign proof | treated **55%** vs control **31%** save → **+24 pts**, ~**$600K** recovered |
 | Recoverable / yr | **~$1.2M** at the proven lift |
-| Top drivers | premium hike (13% vs 4%), complaints, competitor-shopping, denied claims, no autopay |
-| Model | gradient-boosted, **0.72 AUC**, UC-registered, batch-scored |
+| Top drivers | premium hike (~12% vs ~4%), complaints, competitor-shopping, denied claims, no autopay |
+| Model | gradient-boosted, **0.766 AUC**, UC-registered, batch-scored |
 
-_Tabs: 📉 The Trend · 🎯 Where the Risk Sits · 🔍 Why They Leave · 💰 Proof It Works · 🤖 Retention Copilot_
+_Tabs: 📉 The Trend · 🎯 Where the Risk Sits · 🔍 Why They Leave · 💰 Proof It Works · 🤖 Retention Copilot · 🗂️ Agent Workbench_
