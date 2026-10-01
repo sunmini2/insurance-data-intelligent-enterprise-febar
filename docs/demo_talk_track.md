@@ -27,7 +27,7 @@ persona asks.
 ## 1. Open the call (0:00–2:00) — command the room
 
 > "Thanks for the time. I know your team's already walked you through who we are, so I'll skip
-> the company slide and get straight to your problem. Here's how I'd like to use our hour:
+> the company slide and get straight to your problem. Here's how I'd like to use our time:
 > ten minutes to make sure I've got your situation right, about twenty-five to show you what
 > 'good' could look like — live, not slideware — and we'll leave plenty of room for the hard
 > questions."
