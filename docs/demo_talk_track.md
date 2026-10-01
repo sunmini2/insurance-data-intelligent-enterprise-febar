@@ -97,7 +97,7 @@ connected — and that retention is a board-level number. Fair?"*
 
 [Backup question if asked to prove it again: *"How much premium is at risk in the High and Medium tiers?"* → ~$4.8M. Then swap back to the app.]
 
-> **Persona aim:** business leaders + CDO — this is the "decisions in seconds, not weeks" promise, live.
+**Persona aim:** business leaders + CDO — this is the "decisions in seconds, not weeks" promise, live.
 
 ### Beat 2 — 📉 The Trend tab (13:30–15:30): why now
 
