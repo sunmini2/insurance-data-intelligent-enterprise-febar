@@ -158,7 +158,7 @@ Pause and ask:
 > this quarter, here's the at-risk premium that covers and the expected premium recovered at that
 > proven lift. That's the $1.2 million from the header, and it's a number you can put in a plan."
 
-> **Persona aim (CFO):** ROI is now *demonstrated*, not projected. This is your strongest 3 minutes.
+**Persona aim (CFO):** ROI is now *demonstrated*, not projected. This is your strongest 3 minutes.
 
 ### Beat 6 — 🤖 Retention Copilot (23:00–27:00): the "wow" — GenAI activation
 
