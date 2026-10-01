@@ -190,6 +190,42 @@ logic while it catches up."* Keep talking to the business value; never go silent
 
 ---
 
+## 3.5 Zoom out — how it fits together & what it's worth (deck slides 3–4)
+
+[After the live demo, flip to the deck to crystallize it. **Slide 3 — "How It Fits Together."** Trace the flow left to right — this recaps the demo as one connected journey, not five tools taped together.]
+
+> "Let me zoom out for a second. What you just saw live isn't a stack of disconnected tools — it's
+> one connected flow. Your data as it is today — policy, claims, service — scattered across systems.
+> **Lakeflow** ingests it and **Unity Catalog** governs it into one trusted view of every
+> policyholder. From there the model tells you *who's* likely to leave before the renewal notice,
+> and **GenAI** turns years of history into a ready-to-act recommendation. Then it lands in your
+> team's hands — the **app** for your retention team, backed by **Lakebase**, and plain-English
+> answers for leaders in **Genie**."
+
+[Point to the governance banner.]
+
+> "And here's the line your risk and compliance team cares about: it's secure, governed, and
+> audit-ready at *every* step — built on the tools your teams already trust. Nothing to rip and replace."
+
+**Persona aim:** technical + compliance personas hear "one governed track, no shadow AI"; the business persona hears "it all connects, end to end."
+
+[**Slide 4 — "How We Solve It — and What It's Worth to You."** Walk the table row by row: executive risk → how we solve it → proven impact. Tie each row back to a pain they named in discovery.]
+
+> "Now let me tie each risk you raised to how we solve it and what it's worth. **Revenue leaking
+> from silent non-renewals** — a predictive churn model plus the GenAI Retention Copilot — and the
+> proof is the **24-point** save-rate lift we just saw, about **$1.2 million a year** recoverable.
+> **Decisions taking weeks, numbers disputed** — one governed Policyholder 360 and Genie for
+> plain-English Q&A — answers in seconds, not weeks. **Knowledge sitting unused** — GenAI turns
+> claims notes and history into next-best-action, so an agent acts on a Lakebase worklist in about
+> thirty seconds. And **AI and compliance exposure** — Unity Catalog governance, lineage, and PII
+> controls — audit-ready, one governed track, no shadow AI."
+
+> **[Callback]** *"Every row here is one of the pains you named at the top — now with a dollar value next to it."*
+
+**Persona aim:** this is the one frame the economic buyer writes down — risk, solution, and value side by side. Land it, then move to objections.
+
+---
+
 ## 4. Objections & the path forward (35:00–45:00)
 
 Restate the original problem, then map the demo to it. Anticipate (answers in `interview_qa.md`):
