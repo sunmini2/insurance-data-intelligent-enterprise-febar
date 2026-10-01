@@ -1,13 +1,15 @@
 # Demo Talk Track — Driving the App (Northwind Mutual)
 
-A presenter script for the SA "Data Intelligent Enterprise" interview, driven from the
+A presenter script for the **FE Bar** live demo / roleplay, driven from the
 **Databricks App**: `insurance-retention-febar` →
 https://insurance-retention-febar-984752964297111.11.azure.databricksapps.com
 
-**Format:** ~10 min open/discovery · ~25 min demo · ~15 min debrief. Scoring is **75% customer
-skills / 25% build** — the app is a *prop* for the conversation. Lead with the outcome (the app),
-work backwards, and only open the "engine room" (pipelines/model internals) if a technical
-persona asks.
+**Format:** ~10 min open/discovery · ~25 min demo · ~15 min objections & wrap. FE Bar rewards a
+strong *integrated build* **and** *customer skills* — this live walkthrough is where Customer
+Skills is won. Lead with the outcome (the app), work backwards, and only open the "engine room"
+(the Lakeflow pipeline / model internals) if the **technical persona** pushes. Expect two
+personas in the room — the **business stakeholder** and the **technical stakeholder** — and
+speak to both.
 
 **Stage directions are in [brackets]. Spoken lines are in plain text. Say the numbers with confidence.**
 
@@ -249,12 +251,13 @@ Restate the original problem, then map the demo to it. Anticipate (answers in `i
 
 ---
 
-## 5. Debrief (roles drop) — talking points
+## 5. Wrap & debrief (when the roleplay ends) — talking points
 
 - **Approach:** outcome-first; anchored on retention/persistency; validated assumptions in discovery.
 - **Tools:** Databricks (Lakeflow, UC, MLflow, AI Functions, Lakebase, Genie, AI/BI, Apps) built
   with an AI coding agent as a force-multiplier; most effort went to *narrative and data realism*, not plumbing.
-- **Build vs. story:** deliberately ~1/3 build, ~2/3 story and objection prep.
+- **The build:** a real end-to-end 6-stage journey (Lakeflow → UC → Lakebase → ML/GenAI → Genie →
+  App) with committed, text-readable execution evidence — paired with a tight outcome-first story.
 - **Do differently:** swap the synthetic file drop for a *live* source via Lakeflow Connect; add a
   second model (fraud / loss-ratio) to show the platform compounding; add CI/CD + drift monitoring.
 - **Trade-off:** prioritized model usefulness + GenAI activation + the operational Lakebase loop
