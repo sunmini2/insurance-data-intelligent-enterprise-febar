@@ -137,8 +137,11 @@ connected — and that retention is a board-level number. Fair?"*
 > more complaints. They're shopping competitors more. And they've had more denied claims. Every one
 > of these is *addressable* — a rate conversation, a service recovery, a proactive call."
 
-**Persona aim:** you're now consulting, not demoing. Pause and ask: *"Does this match what your
-> retention team hears anecdotally?"*
+**Persona aim:** you're now consulting, not demoing. 
+
+Pause and ask: 
+
+> *"Does this match what your retention team hears anecdotally?"*
 
 ### Beat 5 — 💰 Proof It Works (20:00–23:00): the money beat
 
