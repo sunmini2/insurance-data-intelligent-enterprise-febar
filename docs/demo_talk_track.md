@@ -46,11 +46,10 @@ Ask 3–4 of these, listen, and **write their answers on the whiteboard/chat** �
 
 > Alright, let's start with couple of questions. 
 
-- "What's your current **retention / persistency** rate, and how do you forecast it today?"
-- "When a book starts to lapse, **how many weeks** until it shows up in a report — and who acts on it?"
-- "How much **analyst time** goes into reconciling policy vs. claims vs. CRM before anyone trusts a number?"
-- "When a retention agent or adjuster needs a customer's full history, **how many systems** do they open?"
-- "Where does **AI reliability or data governance** worry your risk and compliance team most?"
+> - "What's your current **retention / persistency** rate, and how do you forecast it today?"
+> - "When a book starts to lapse, **how many weeks** until it shows up in a report — and who acts on it?"
+> - "How much **analyst time** goes into reconciling policy vs. claims vs. CRM before anyone trusts a number?"
+> - "When a retention agent or adjuster needs a customer's full history, **how many systems** do they open?"
 
 **State your assumptions out loud, then validate:** *"I'm assuming a ~$400M in-force book, a
 Guidewire/Duck-Creek-style policy system, a separate claims platform, and a CRM nobody's fully
