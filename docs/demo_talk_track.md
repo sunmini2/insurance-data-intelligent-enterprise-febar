@@ -113,7 +113,7 @@ connected — and that retention is a board-level number. Fair?"*
 > "This is the same story in dollars: the red is premium that walked out the door at renewal.
 > Over the last twelve months that's real money — and almost none of it was seen coming."
 
-> **Persona aim (CFO/business):** this is the *cost of inaction* made visual — a metric they already report on.
+**Persona aim (CFO/business):** this is the *cost of inaction* made visual — a metric they already report on.
 
 ### Beat 3 — 🎯 Where the Risk Sits (15:00–17:30): make it actionable
 
